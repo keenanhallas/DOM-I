@@ -48,11 +48,13 @@ navLinks[1].textContent = siteContent.nav["nav-item-2"];
 navLinks[2].textContent = siteContent.nav["nav-item-3"];
 navLinks[3].textContent = siteContent.nav["nav-item-4"];
 navLinks[4].textContent = siteContent.nav["nav-item-5"];
-navLinks[5].textContent = siteContent.nav["nav-item-6"];
+navLinks[5].textContent = siteContent.nav["nav-item-6"]; //could you do this with a forEach?
 
 const ctaH1 = document.querySelector(".cta-text h1");
-ctaH1.textContent = siteContent.cta.h1;
-ctaH1.style.textAlign = "center";
+ctaH1.textContent = siteContent.cta.h1; //this still needs all words on their own lines somehow
+
+const ctaButton = document.querySelector(".cta-text button");
+ctaButton.textContent = siteContent.cta.button;
 
 const codeCircleImg = document.querySelector("#cta-img");
 codeCircleImg.src = siteContent.cta["img-src"];
