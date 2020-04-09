@@ -43,12 +43,12 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 const navLinks = document.querySelectorAll(".container header nav a");
 console.log(navLinks);
-navLinks[0].textContent = siteContent.nav["nav-item-1"];
+navLinks[0].textContent = siteContent.nav["nav-item-1"]; //use forEach here?
 navLinks[1].textContent = siteContent.nav["nav-item-2"];
 navLinks[2].textContent = siteContent.nav["nav-item-3"];
 navLinks[3].textContent = siteContent.nav["nav-item-4"];
 navLinks[4].textContent = siteContent.nav["nav-item-5"];
-navLinks[5].textContent = siteContent.nav["nav-item-6"]; //could you do this with a forEach?
+navLinks[5].textContent = siteContent.nav["nav-item-6"];
 
 const ctaH1 = document.querySelector(".cta-text h1");
 ctaH1.textContent = siteContent.cta.h1; //this still needs all words on their own lines somehow
@@ -69,3 +69,13 @@ topPs[1].textContent = siteContent["main-content"]["about-content"];
 
 const middleImg = document.querySelector("#middle-img");
 middleImg.src = siteContent["main-content"]["middle-img-src"];
+
+const bottomH4s = document.querySelectorAll(".bottom-content h4");
+bottomH4s[0].textContent = siteContent["main-content"]["services-h4"];
+bottomH4s[1].textContent = siteContent["main-content"]["product-h4"];
+bottomH4s[2].textContent = siteContent["main-content"]["vision-h4"];
+
+const bottomPs = document.querySelectorAll(".bottom-content p");
+bottomPs[0].textContent = siteContent["main-content"]["services-content"];
+bottomPs[1].textContent = siteContent["main-content"]["product-content"];
+bottomPs[2].textContent = siteContent["main-content"]["vision-content"];
