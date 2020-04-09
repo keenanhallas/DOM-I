@@ -58,3 +58,11 @@ ctaButton.textContent = siteContent.cta.button;
 
 const codeCircleImg = document.querySelector("#cta-img");
 codeCircleImg.src = siteContent.cta["img-src"];
+
+const topH4s = document.querySelectorAll(".top-content h4");
+topH4s[0].textContent = siteContent["main-content"]["features-h4"]; //use forEach here?
+topH4s[1].textContent = siteContent["main-content"]["about-h4"];
+
+const topPs = document.querySelectorAll(".top-content p");
+topPs[0].textContent = siteContent["main-content"]["features-content"]; //use forEach here?
+topPs[1].textContent = siteContent["main-content"]["about-content"];
