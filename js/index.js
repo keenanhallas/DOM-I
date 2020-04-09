@@ -42,24 +42,33 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 const navLinks = document.querySelectorAll(".container header nav a");
-navLinks[0].textContent = siteContent.nav["nav-item-1"]; //use forEach here?
+navLinks[0].textContent = siteContent.nav["nav-item-1"]; //use forEach or a loop here?
 navLinks[1].textContent = siteContent.nav["nav-item-2"];
 navLinks[2].textContent = siteContent.nav["nav-item-3"];
 navLinks[3].textContent = siteContent.nav["nav-item-4"];
 navLinks[4].textContent = siteContent.nav["nav-item-5"];
 navLinks[5].textContent = siteContent.nav["nav-item-6"];
 
-//navLinks.style.color = "green";
+const prepended = document.createElement("a");
+prepended.textContent = "Home";
+prepended.style.color = "green";
 
-//const nav = document.querySelector(".container header nav");
+const appended = document.createElement("a");
+appended.textContent = "Visit Us!";
+appended.style.color = "green";
+//is there a way to add these to navLinks & style all the links together? Would this even be helpful?
+//why is there a cursor instead of a hand over the added links?
+
+const nav = document.querySelector(".container header nav");
+nav.prepend(prepended);
+nav.appendChild(appended);
+
+//navLinks.style.color = "green";
 //nav.style.color = "green";
 
 navLinks.forEach(link => { //is there a way to do this without forEach, like the two ideas above?
   link.style.color = "green";
 });
-
-//const nav = document.querySelector(".container header nav");
-//nav.style.color = "green";
 
 const ctaH1 = document.querySelector(".cta-text h1");
 ctaH1.textContent = siteContent.cta.h1; //this still needs all words on their own lines somehow
