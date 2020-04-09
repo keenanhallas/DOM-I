@@ -66,3 +66,6 @@ topH4s[1].textContent = siteContent["main-content"]["about-h4"];
 const topPs = document.querySelectorAll(".top-content p");
 topPs[0].textContent = siteContent["main-content"]["features-content"]; //use forEach here?
 topPs[1].textContent = siteContent["main-content"]["about-content"];
+
+const middleImg = document.querySelector("#middle-img");
+middleImg.src = siteContent["main-content"]["middle-img-src"];
