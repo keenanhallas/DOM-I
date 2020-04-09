@@ -71,11 +71,22 @@ const middleImg = document.querySelector("#middle-img");
 middleImg.src = siteContent["main-content"]["middle-img-src"];
 
 const bottomH4s = document.querySelectorAll(".bottom-content h4");
-bottomH4s[0].textContent = siteContent["main-content"]["services-h4"];
+bottomH4s[0].textContent = siteContent["main-content"]["services-h4"]; //use forEach here?
 bottomH4s[1].textContent = siteContent["main-content"]["product-h4"];
 bottomH4s[2].textContent = siteContent["main-content"]["vision-h4"];
 
 const bottomPs = document.querySelectorAll(".bottom-content p");
-bottomPs[0].textContent = siteContent["main-content"]["services-content"];
+bottomPs[0].textContent = siteContent["main-content"]["services-content"]; //use forEach here?
 bottomPs[1].textContent = siteContent["main-content"]["product-content"];
 bottomPs[2].textContent = siteContent["main-content"]["vision-content"];
+
+const contactH4 = document.querySelector(".contact h4");
+contactH4.textContent = siteContent.contact["contact-h4"];
+
+const contactPs = document.querySelectorAll(".contact p");
+contactPs[0].textContent = siteContent.contact.address; //needs to be on two lines...use forEach here?
+contactPs[1].textContent = siteContent.contact.phone;
+contactPs[2].textContent = siteContent.contact.email;
+
+const copyright = document.querySelector("footer p");
+copyright.textContent = siteContent.footer.copyright;
