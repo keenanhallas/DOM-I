@@ -60,25 +60,36 @@ nav.appendChild(appended);
 
 navLinks = document.querySelectorAll(".container header nav a"); //updating navLinks with new <a> elements
 
-//navLinks.style.color = "green";  <- why doesn't this work?
-
 navLinks.forEach(link => {
   link.style.textDecoration = "none";
   link.style.color = "green";
+  link.style.fontSize = "1.1rem";
+  link.style.lineHeight = "1.2";
+  link.style.padding = "0.4%";
+  link.style.borderRadius = "5px";
+  link.addEventListener("mouseenter", (event) => {
+    event.target.style.color = "white";
+    event.target.style.backgroundColor = "green";
+  });
+  link.addEventListener("mouseleave", (event) => {
+    event.target.style.color = "green";
+    event.target.style.backgroundColor = "white";
+  });
 });
 
-//navLinks.addEventListener("mouseenter", (event) => {
-  //event.target.style.color = "grey";
-//});
+//are two separate event listeners ok, or is it better to do one with a conditional statement?
+//is there a way to do the above styling by altering the css hover pseudoclass style? 
 
 const ctaH1 = document.querySelector(".cta-text h1");
 ctaH1.textContent = siteContent.cta.h1; //this still needs all words on their own lines somehow
+//ctaH1.textContent = "DOM \n IS \n AWESOME"
 ctaH1.style.width = "70%";
 ctaH1.style.textAlign = "center";
-ctaH1.style.border = "1px solid black";
+//ctaH1.style.border = "1px solid black";
 
 const ctaButton = document.querySelector(".cta-text button");
 ctaButton.textContent = siteContent.cta.button;
+ctaButton.style.borderRadius = "5px";
 ctaButton.addEventListener("click", (event) => {
   const newText = document.createElement("p");
   newText.textContent = "You won't regret it!";
@@ -117,6 +128,7 @@ const contactH4 = document.querySelector(".contact h4");
 contactH4.textContent = siteContent.contact["contact-h4"];
 
 const contactPs = document.querySelectorAll(".contact p");
+//contactPs[0].textContent = "123 Way 456 Street \n Somewhere, USA"
 contactPs[0].textContent = siteContent.contact.address; //needs to be on two lines
 contactPs[1].textContent = siteContent.contact.phone;
 contactPs[2].textContent = siteContent.contact.email;
