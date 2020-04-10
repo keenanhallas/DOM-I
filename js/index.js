@@ -63,36 +63,53 @@ navLinks = document.querySelectorAll(".container header nav a"); //updating navL
 //navLinks.style.color = "green";  <- why doesn't this work?
 
 navLinks.forEach(link => {
+  link.style.textDecoration = "none";
   link.style.color = "green";
 });
 
+//navLinks.addEventListener("mouseenter", (event) => {
+  //event.target.style.color = "grey";
+//});
+
 const ctaH1 = document.querySelector(".cta-text h1");
 ctaH1.textContent = siteContent.cta.h1; //this still needs all words on their own lines somehow
+ctaH1.style.width = "70%";
+ctaH1.style.textAlign = "center";
+ctaH1.style.border = "1px solid black";
 
 const ctaButton = document.querySelector(".cta-text button");
 ctaButton.textContent = siteContent.cta.button;
+ctaButton.addEventListener("click", (event) => {
+  const newText = document.createElement("p");
+  newText.textContent = "You won't regret it!";
+  newText.style.fontFamily = "'Bangers', cursive";
+  newText.style.fontSize = "2rem";
+  newText.style.marginTop = "5%";
+  const ctaText = document.querySelector(".cta-text");
+  ctaText.appendChild(newText);
+}, {once: true});
 
 const codeCircleImg = document.querySelector("#cta-img");
 codeCircleImg.src = siteContent.cta["img-src"];
 
 const topH4s = document.querySelectorAll(".top-content h4");
-topH4s[0].textContent = siteContent["main-content"]["features-h4"]; //use forEach here?
+topH4s[0].textContent = siteContent["main-content"]["features-h4"]; //use forEach for all of these?
 topH4s[1].textContent = siteContent["main-content"]["about-h4"];
 
 const topPs = document.querySelectorAll(".top-content p");
-topPs[0].textContent = siteContent["main-content"]["features-content"]; //use forEach here?
+topPs[0].textContent = siteContent["main-content"]["features-content"];
 topPs[1].textContent = siteContent["main-content"]["about-content"];
 
 const middleImg = document.querySelector("#middle-img");
 middleImg.src = siteContent["main-content"]["middle-img-src"];
 
 const bottomH4s = document.querySelectorAll(".bottom-content h4");
-bottomH4s[0].textContent = siteContent["main-content"]["services-h4"]; //use forEach here?
+bottomH4s[0].textContent = siteContent["main-content"]["services-h4"];
 bottomH4s[1].textContent = siteContent["main-content"]["product-h4"];
 bottomH4s[2].textContent = siteContent["main-content"]["vision-h4"];
 
 const bottomPs = document.querySelectorAll(".bottom-content p");
-bottomPs[0].textContent = siteContent["main-content"]["services-content"]; //use forEach here?
+bottomPs[0].textContent = siteContent["main-content"]["services-content"];
 bottomPs[1].textContent = siteContent["main-content"]["product-content"];
 bottomPs[2].textContent = siteContent["main-content"]["vision-content"];
 
@@ -100,7 +117,7 @@ const contactH4 = document.querySelector(".contact h4");
 contactH4.textContent = siteContent.contact["contact-h4"];
 
 const contactPs = document.querySelectorAll(".contact p");
-contactPs[0].textContent = siteContent.contact.address; //needs to be on two lines...use forEach here?
+contactPs[0].textContent = siteContent.contact.address; //needs to be on two lines
 contactPs[1].textContent = siteContent.contact.phone;
 contactPs[2].textContent = siteContent.contact.email;
 
